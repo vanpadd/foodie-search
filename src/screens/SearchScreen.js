@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import SearchBar from "../components/SearchBar";
 
 const SearchScreen = () => {
+  const [value, setValue] = useState("");
+
   return (
     <View style={styles.backgroundStyle}>
-      <SearchBar />
+      <SearchBar value={value} onChange={(newValue) => setValue(newValue)} />
     </View>
   );
 };
